@@ -1,0 +1,14 @@
+.navigation-top {
+    padding: 3rem;
+    @include breakpoint(small only) {
+        padding: 3rem 0;
+    }
+}
+
+.menu {
+    &__link {
+        font-family: 'Oswald', sans-serif;
+        text-decoration: none;
+        color: $dark-gray;
+    }
+}

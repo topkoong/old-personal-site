@@ -1,0 +1,49 @@
+.intro {
+
+    background-color: #fff;
+    
+    @keyframes headerAnimation {
+        0% {
+            transform: translateY(-120%);
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes bioAnimation {
+        0% {
+            transform: translateY(120%);
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .intro-container {
+        animation: 6s ease-in-out borderAnimation forwards;
+        // animation: 5s cubic-bezier(0.075, 0.82, 0.165, 1) borderAnimation forwards;
+        padding: 8rem;
+        @include breakpoint(small) {
+            padding: 0;
+            hr {
+                max-width: 13rem;
+            }
+        }
+    }
+
+    .short-bio {
+        text-align: center;
+        font-size: 30px;
+        animation: 4s cubic-bezier(0.075, 0.82, 0.165, 1) bioAnimation forwards;
+        @include breakpoint(medium only) {
+            font-size: 30px;
+        }
+    
+        @include breakpoint(small only) {
+            font-size: 20px;
+        }
+    }
+}

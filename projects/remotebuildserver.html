@@ -1,0 +1,853 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Build Server</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navigation-top">
+            <ul class="menu align-center">
+                <li>
+                    <a href="/index.html" class="menu__link">Home</a>
+                </li>
+                <li>
+                    <a href="/index.html" class="menu__link">About Me</a>
+                </li>
+                <li>
+                    <a href="/project.html" class="menu__link">Projects</a>
+                </li>
+                <li>
+                    <a href="/contact.html" class="menu__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="intro">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <h1 class="header-primary">
+                        Remote Builder Server</h1>
+                    <p class="project-subtitle">In short, it is an automated tool that builds test libraries.</p>
+                    <hr>
+                    <h4>
+                        <strong>
+                            Developed and implemented a Build Server prototype for use in Software Development
+                            Federation. Used a process pool and message
+                            passing communication to enable concurrent operation.
+                        </strong>
+                    </h4>
+
+
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <ul class="sub-list">
+                    <li>
+                        <strong>Technologies Used:</strong> C#, .NET Framework, WPF, WCF</li>
+                    <li>
+                        <strong>Creator:</strong> Theerut Foongkiatcharoen</li>
+                </ul>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <ul>
+                        <li>Package prologues and function prologues are included.</li>
+                        <li>The public interface documentation — holding a short description of the package operations,
+                            the required
+                            files to build the package, and the build process and the maintenance history — is
+                            included.</li>
+                        <li>Each function includes some comments to describe its operation.</li>
+                    </ul>
+                    <div class="project-description">
+                        <p>In general, software development is complex, especially as applications, teams, and
+                            deployment infrastructure
+                            grow in complexity themselves. Also, software projects involve lots of files consist of a
+                            great
+                            number of packages and million lines of codes so keeping track of all of these becomes an
+                            intolerable
+                            burden, and it is arduous and time-consuming when developers attempt to merge their
+                            accumulated
+                            code changes. These factors combined makes it harder to deliver updates to customers
+                            quickly.
+                            Hence, with the Remote Build Server concept that efficiently and strongly supports
+                            continuous
+                            integration, it considerably enhances software quality and development process, and
+                            developers
+                            can catch bugs early, spend less time debugging, and deliver software more rapidly. Our
+                            Federation
+                            of servers contains Client Mock, Repository Mock, Test Harness Mock, and Build Server, each
+                            providing
+                            a dedicated service for continuous integration, and top level of eleven major packages are
+                            the
+                            following: Client Mock, Repository Mock, Test Harness Mock, Sender, Parser, Builder, File
+                            Manager,
+                            Logger, File Handler, Environment Manager, and Build. Each package is accurately described
+                            in
+                            the Partition section. In addition, users of the Remote Build Server are Developers,
+                            Project
+                            Managers, Quality Assurance (QA), SMA Instructor and Teaching Assistants. How they will
+                            interact
+                            with the application is described in detail. Rational and technical explanation for each
+                            user
+                            is also provided in Uses section. Moreover, the major activities of the Build Server are
+                            well
+                            represented in the Activities Diagram section, and critical issues regarding performance
+                            and
+                            need and value arise, but ultimate solutions are provided in detail.</p>
+                    </div>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4>
+                        <strong>
+                            Application Activities
+                        </strong>
+                    </h4>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <p>The client can select files from GUI to upload from local storage to Repository or select files
+                        in Repository
+                        for packaging into a test library, a test element specifying driver and tested files, added to
+                        a
+                        build request structure. The GUI will display which selected files client added to build Then,
+                        the
+                        client builds a build request to generate an XML build request, and the GUI will display the
+                        build
+                        request structure that the client has just created. After that, the client selects newly
+                        generated
+                        build requests and send them to the Repository Mock, and the GUI will display that client has
+                        transferred
+                        the build request structure and XML build request files successfully. Then, the Mother Builder
+                        will
+                        receive a build request message forwarded by Repo and check the ready message queue to see
+                        which
+                        child processes are available. Once it found that there’s a child process available, it will
+                        send
+                        a build request message to that child process. When the child builder receives a build request
+                        message,
+                        it will deserialize the XML build request and asks repo for the cited files. Once it receives
+                        those
+                        required files, it will build test libraries if there are more than one test element, generate
+                        an
+                        XML test request and send the log to Repo and test libraries to Test Harness. Test Harness will
+                        then
+                        check a test request message, and if there is a test request message, it will deserialize the
+                        XML
+                        test request and loading test assemblies into application domain, recording pass status,
+                        logging
+                        execution details, sending test result to Repository. After that, the client can view the test
+                        logs
+                        and build logs from GUI.
+                    </p>
+                    <p>Below is the figure of user interaction.</p>
+                    <h5 class="u-add-tb-margin"><strong>Run the compile.bat file as admin using the Developer Command
+                            Prompt for Visual Studio.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/build-1.JPG" class="image" alt="Build and Run using C# compiler from command line">
+                        <p class="caption">Compile using C# compiler from command line</p>
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>It will automatically run the run.bat file as admin using the
+                            Developer Command Prompt for Visual Studio.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/run-2.jpg" class="image" alt="Build and Run using C# compiler from command line">
+                        <p class="caption">Run using C# compiler from command line</p>
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Client Mock can select files to upload from local storage to
+                            Repository or select files for packaging into a test library, a test element specifying
+                            driver and tested files, added to a build request structure. It provides mechanisms to
+                            start the main Builder (mother process), specifying the number of child builders to be
+                            started, and provides the facility to ask the mother Builder to shut down its Pool
+                            Processes. Also, it enables building test requests by selecting file names from the Mock
+                            Repository.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/UI.jpg" class="image" alt="Package Diagram">
+                        <p class="caption">The user's primary interface (Graphical User Interface (GUI)) into the
+                            Federation, serves to submit code and test requests to the Repository using WPF.</p>
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Specify the number of child builders to be started.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/specify-children-builder.JPG" class="image"
+                            alt="Package Diagram">
+                        <p class="caption">A process pool component that creates a specified number of processes on
+                            command.</p>
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Mother process has spawned child process builders and uses
+                            Message-Passing Communication Service built with WCF to communicate with Pool Processes.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/mother-builder-1.JPG" class="image"
+                            alt="The mother process">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Pool Processes uses message-passing communication to access
+                            messages from the mother Builder process. They receive processID and port from command-line
+                            arguments set by Mother Builder spawned at startup, and send ready messages to Mother
+                            Builder right away. Each child process examines whether its mother builder has sent a build
+                            request to it yet. If a mother builder has sent a build request to it, it will send a build
+                            file request to RepoMock so it can ask for files.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/childproc-1.JPG" class="image" alt="The pool processes">
+                    </div>
+
+                    <h5 class="u-add-tb-margin"><strong>The GUI client is a separate process, implemented with Windows
+                            Presentation Foundation (WPF) and using message-passing communication. It provides
+                            mechanisms to get file lists from the Repository, and select files for packaging into a
+                            test library1, e.g., a test element specifying driver and tested files, added to a build
+                            request structure. It also provides the capability of repeating that process to add other
+                            test libraries to the build request structure, and it is able to request the repository to
+                            send a build request in its storage to the Build Server for build processing.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/GUI-console-1.JPG" class="image" alt="The GUI client">
+                        <p class="caption">The GUI client sends build request structures to the repository for storage
+                            and transmission to the Mother Builder (Build Server). – 1</p>
+                    </div>
+
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/GUI-console-2.JPG" class="image" alt="The GUI client">
+                        <p class="caption">The GUI client sends build request structures to the repository for storage
+                            and transmission to the Mother Builder (Build Server). – 2</p>
+                    </div>
+
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/GUI-console-3.JPG" class="image" alt="The GUI client">
+                        <p class="caption">The GUI client sends build request structures to the repository for storage
+                            and transmission to the Mother Builder (Build Server). – 3</p>
+                    </div>
+
+                    <h5 class="u-add-tb-margin"><strong>The mock Repository, on command, copies a set of test source
+                            code files, test drivers, and a test request with a test for each test driver, to a path
+                            known to the Mother Builder. It holds all code and documents for the current baseline,
+                            along with their dependency relationships. It also holds test results and may cache build
+                            images.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/repomock-1.JPG" class="image" alt="The mock Repository">
+                        <p class="caption">The mock Repository has received build request structures.</p>
+                    </div>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/repomock-2.JPG" class="image" alt="The mock Repository">
+                        <p class="caption">The mock Repository has forwarded build request structures to the Mother
+                            Builder.</p>
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Mother Builder examines whether there's a build request message
+                            in the message command sent by GUI through MessagePassingComm service. If there's a build
+                            request message, Mother Builder will enqueue the message argument, which is BuildRequest in
+                            form of string, into a build request queue.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/mother-builder-2.JPG" class="image"
+                            alt="The mock Repository">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Mother Builder checks there's if there's a ready message sent
+                            by a child process. If so, Mother Builder will enqueue a ready message into the ready
+                            message queue. After that it will dequeue a readyMessage from the readyMessage queue and
+                            send a buildrequest filename to a particular child process that has sent a ready message to
+                            it earlier via MessagePassingComm service.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/mother-builder-3.JPG" class="image"
+                            alt="The mock Repository">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Pool Processes uses message-passing communication to access
+                            messages from the mother Builder process. They will check if a mother builder has sent a
+                            build request to them yet. If so, they will send a build file request to RepoMock so they
+                            can ask for files.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/childproc-1.JPG" class="image" alt="The pool processes">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>The mock Repository has sent required build files to Pool
+                            Processes.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/repomock-2.JPG" class="image" alt="The mock Repository">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>RepoMock keeps checking the Mother Process if there's an
+                            incoming build file request message from Pool Processes, running as a background thread.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/repomock-3.JPG" class="image" alt="The mock Repository">
+                        <p class="caption">After the mock Repository receives build file request messages from child
+                            process builders, it will immediately send required build files to each child process
+                            builder.</p>
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Based on build requests and code sent from the Repository, the
+                            Pool Processes builds test libraries for submission to the Test Harness.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/childproc-2.JPG" class="image" alt="The pool processes">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>After Pool Processes has successfully built the test libraries,
+                            they will send the build log to the Mock Repository. Then, they keep checking another
+                            request messages.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/childproc-3.JPG" class="image" alt="The pool processes">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>The Test Harness checks if there's a test request and
+                            DllFilesSent message using MessagePassingComm service. If there's a test request message,
+                            TestHarness will deserializes TestRequest.xml using Serialization package through
+                            xmlDeserialization function. Then, it will ask for required files, matching a test request
+                            after deserialization.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-1.JPG" class="image" alt="The Test Harness">
+                    </div>
+
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/childproc-3.JPG" class="image" alt="The pool processes">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>The Test Harness attempts to load each test library it receives
+                            and executes it.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-2.JPG" class="image" alt="The Test Harness">
+                    </div>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-3.JPG" class="image" alt="The Test Harness">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>The Test Harness submits the results of testing to the
+                            Repository. – 1</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-4.JPG" class="image" alt="The Test Harness">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>The Test Harness submits the results of testing to the
+                            Repository. – 2</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-5.JPG" class="image" alt="The Test Harness">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>The Mock Repo has received a build log message from Pool
+                            Processes.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/repomock-4.JPG" class="image" alt="The mock Repository">
+                    </div>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/repomock-5.JPG" class="image" alt="The mock Repository">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>The Mock Repo has obtained test results.</strong></h5>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/application/repomock-6.JPG" class="image" alt="The mock Repository">
+                    </div>
+                    <p>For detailed information, it is represented in the form of an activity diagram as illustrated
+                        below.</p>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/activity-diagram.jpg" class="image" alt="Package Diagram">
+                        <p class="caption">Remote Build Server Activity Diagram</p>
+                    </div>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4>
+                        <strong>
+                            Partitions
+                        </strong>
+                    </h4>
+                </div>
+                <div class="cell">
+                    <p>This section will layout the technical breakdown of required functionality for the build server
+                        and each
+                        task becomes a package and class candidate. Here are the following eleven major packages and
+                        build
+                        server classes: Client, Main Window(GUI), IMPCommService (Comm), MPCommService (Comm Message),
+                        Blocking
+                        Queue, Repository Mock, Mother Builder, Child Builder, Build Configure, Test Harness, File
+                        Manager,
+                        Logger, XML Handler, AppDomainMgr, MpCommService and IMPCommService comprise of multiple
+                        packages,
+                        meaning I will not go into lower level these two packages. However, we are talking about a
+                        Remote
+                        Build Server so I will give a clear explanation regarding what all functionalities it will
+                        require
+                        in detail.
+                    </p>
+                    <p>The figure below illustrates package diagram for the Remote Build Server.</p>
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/package-diagram.jpg" class="image" alt="Package Diagram">
+                        <p class="caption">Remote Build Server Package Diagram</p>
+                    </div>
+
+                    <div class="img-container">
+                        <img src="/images/projects/remotebuildserver/class-diagram.jpg" class="image" alt="Package Diagram">
+                        <p class="caption">Remote Build Server Class Diagram</p>
+                    </div>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4>
+                        <strong>
+                            Client
+                        </strong>
+                    </h4>
+                </div>
+                <div class="cell">
+                    <p>Client Mock can select files to upload from local storage to Repository or select files for
+                        packaging
+                        into a test library, a test element specifying driver and tested files, added to a build
+                        request
+                        structure. Also, it can specify the number of child builders to be started, shut down Pool
+                        Processes,
+                        and send build request structures to the repository for storage and transmission to the Mother
+                        Builder.
+                    </p>
+                    <ul class="sub-list">
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        Main Window(GUI)
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>Client Mock can select files to upload from local storage to Repository or select
+                                    files for
+                                    packaging into a test library, a test element specifying driver and tested files,
+                                    added
+                                    to a build request structure. Also, it can specify the number of child builders to
+                                    be
+                                    started, shut down Pool Processes, and send build request structures to the
+                                    repository
+                                    for storage and transmission to the Mother Builder.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        IMPCommService (Comm)
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>IMPCommService is service interface for MPCommService including interface used for
+                                    message
+                                    passing and file transfer and class representing serializable messages. It also
+                                    defines
+                                    a service contract given that the service contract specifies what operations the
+                                    service
+                                    supports. Each method in the IMPCommService corresponds to a specific service
+                                    operation.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        MPCommService (Comm Message)
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>MPCommService implements service interface. It implements postMessage, getMessage,
+                                    and postFile
+                                    functions using Sender and Receiver instances. A postMessage function sends
+                                    CommMessage
+                                    instance to a Receiver instance. A getMessage function retrieves a CommMessage from
+                                    a
+                                    Sender instance, and a postFile function is called by a Sender instance to transfer
+                                    a
+                                    file.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        Blocking Queue
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>This package implements a generic blocking queue using a Monitor and lock, which is
+                                    equivalent
+                                    to using a condition variable with a lock. It also demonstrates communication
+                                    between
+                                    two threads using an instance of the queue. If the queue is empty when a reader
+                                    attempts
+                                    to dequeue an item, the reader will block until the writing thread enqueues an
+                                    item.
+                                    Therefore, waiting is efficient.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        Repository Mock
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>Repository Mock is a storage house of the whole system due to the fact that it is a
+                                    central
+                                    location in which data is stored and managed, meaning this is where the source code
+                                    lives
+                                    and it contain all the code after the user checks in their changes to it. It is a
+                                    simple
+                                    server, running it own process, using our Message-Passing Communication, to send
+                                    and
+                                    receive requests and replies. Also, it uses File Manager package to handle file
+                                    retrieval/storage
+                                    to accept files including source codes, XML build requests, and Test Libraries.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        Mother Builder
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>Mother Builder provides a queue of build requests and ready messages so that it can
+                                    manage
+                                    Child Builder by spawning the specified number of child processes given by client
+                                    as
+                                    well as passing them Build Requests when it receives ready messages from them.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        Child Builder
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>Child Builder, spawned by Mother Builder, uses a Message-Passing Communication
+                                    Service built
+                                    with WCF to access messages from the Mother Builder process by sending a ready
+                                    message
+                                    to inform a mother builder that it is ready to retrieve a build request. Once the
+                                    Child
+                                    Builder receives a build request message, it will load files, matching a retrieved
+                                    Build
+                                    Request, from Repository after performing XML deserialization. After that it will
+                                    build
+                                    those files into libraries, send them to the Test Harness, and uses to Logger to
+                                    alert
+                                    the client whether the build is successful or not and sends the log to Repo.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        Build Configure
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>Since the toolchain, containing Debugger, Compiler, Linker, and another tool for a
+                                    specific
+                                    programming language to produce executable files and shared libraries for the
+                                    target,
+                                    comes into play immediately after the merge commit happens, Build configure package
+                                    sets
+                                    up the environment that supports development and operation tasks and includes a
+                                    specific
+                                    set of tool integrations to prepare for build.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        Test Harness
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>Test Harness Mock provides the system for automated integration testing. It runs
+                                    tests based
+                                    on test requests and libraries sent by the Child Builder if the build succeeds
+                                    through
+                                    a Message-Passing Communication Service built with WCF. Generally, it runs a
+                                    library
+                                    consisting of test driver and a small set of tested packages, loading test
+                                    assemblies
+                                    into application domain, recording pass status, logging execution details, sending
+                                    test
+                                    result to Repository.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        AppDomainMgr
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>It gets the domain manager that was provided by the host when the application domain
+                                    was
+                                    initialized so that test harness can use it to load test assemblies.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        Logger
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>Logger is in charge of recording logs for test libraries built by Build server and
+                                    test executed
+                                    by Test Harness Mock owing to keeping track of all the test results. The user can
+                                    review
+                                    logs to ensure tests passed and troubleshoot when the tests failed. As a result,
+                                    logging
+                                    increases efficiency of codes.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        File Manager
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>File manager provides file management capabilities. It creates, delete temp
+                                    directory, searches
+                                    for files with a specific file extension or name.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cell">
+                                <h5 class="u-add-tb-margin">
+                                    <strong>
+                                        XML Handler
+                                    </strong>
+                                </h5>
+                            </div>
+                            <div class="cell">
+                                <p>XML Handler is responsible for serialization of objects in XML format and
+                                    deserialization
+                                    of an XML file back to an object. Generally, serialization is a process by which an
+                                    object's
+                                    state is transformed in some serial data format, such as XML or binary format and
+                                    is
+                                    the process of converting an object into a form that can be readily transported.
+                                    Deserialization,
+                                    however, is used to convert the byte of data, such as XML or binary data, to object
+                                    type.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4>
+                        <strong>
+                            Critical Issues
+                        </strong>
+                    </h4>
+                    <ul class="clear-list">
+                        <li>
+                            <ul class="sub-list">
+                                <li>
+                                    <div class="cell">
+                                        <h5 class="u-add-tb-margin">
+                                            <strong>
+                                                Need and Value
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div class="cell">
+                                        <p>Although a remote build server is the need for today’s organization and
+                                            reduces integration
+                                            problems allowing us to deliver software more rapidly, the initial cost of
+                                            implementing
+                                            this including initial installations and configurations is costly and can
+                                            create
+                                            disruption if it makes no difference in minimizing the cost of integration
+                                            or
+                                            freeing developers from manual tasks. It is not worth it that the
+                                            organization
+                                            spends a significant amount of money on a basic remote build server that is
+                                            not
+                                            helpful and does not overcome the learning curve before implementing this,
+                                            meaning
+                                            all utilities of application will be useless. For instance, if it does not
+                                            help
+                                            us identify our integration problems earlier or it does not save us time
+                                            and
+                                            verify code that much, the organization waste the money for nothing. This
+                                            could
+                                            be one of the critical issues in terms of ease of use and would rather be
+                                            federation
+                                            issues than the developers.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h5 class="u-add-tb-margin">
+                                        <strong>
+                                            Solution
+                                        </strong>
+                                    </h5>
+                                    <div class="cell">
+                                        <p>The business stakeholder should contemplate if it is worth for this type of
+                                            project
+                                            or the organization really needs this so they can minimize the cost of
+                                            integration
+                                            or freeing developers from manual tasks
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="sub-list">
+                                <li>
+                                    <div class="cell">
+                                        <h5 class="u-add-tb-margin">
+                                            <strong>
+                                                Performance
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div class="cell">
+                                        <p>Build Server in the model will have lots of build requests on it, and if
+                                            something
+                                            goes wrong, the whole system will go down and crash, and this could be a
+                                            critical
+                                            issue. In terms of time consumption, if one task throws an unexpected
+                                            exception
+                                            only the process that was running the task will go down instead of having
+                                            the
+                                            whole system going down. Similarly, there will be an issue storing and
+                                            processing
+                                            that can throw an unexpected exception when the user is sending too many
+                                            test
+                                            requests to the Repository Mock. Also, if C++ headers include each other in
+                                            the
+                                            absence of an include guard, a file will need to be processed multiple
+                                            times
+                                            and can cause significant build delays in large systems. Also, the compiler
+                                            will
+                                            endlessly preprocess the header and use CPU time until the computer gives
+                                            in
+                                            and halts.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h5 class="u-add-tb-margin">
+                                        <strong>
+                                            Solution
+                                        </strong>
+                                    </h5>
+                                    <div class="cell">
+                                        <p>For the Build Server issue, providing process-pool helps increasing
+                                            performance and
+                                            reliability because the process-pool helps dividing tasks on different
+                                            processes
+                                            which can be used to efficiently delegate work over multiple CPU cores. For
+                                            the
+                                            Repository Mock issue, using a blocking queue approach to deal with test
+                                            requests
+                                            can solve the problem due to the fact that a thread trying to dequeue from
+                                            an
+                                            empty queue is blocked until some other thread inserts an item into the
+                                            queue.
+                                            A thread trying to enqueue an item in a full queue is blocked until some
+                                            other
+                                            thread makes space in the queue, either by dequeuing one or more items or
+                                            clearing
+                                            the queue completely. In a similar manner, applying multithreading to this
+                                            code
+                                            can enhance performance and concurrency on multi-processor machines by
+                                            paralyzing
+                                            the tasks.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="sub-list">
+                                <li>
+                                    <div class="cell">
+                                        <h5 class="u-add-tb-margin">
+                                            <strong>
+                                                Development
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                    <div class="cell">
+                                        <p>Defining a single message structure that works for all messages used in the
+                                            Federation
+                                            is quite difficult, and managing Endpoint information for Repository,
+                                            Mother,
+                                            and Test Harness.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h5 class="u-add-tb-margin">
+                                        <strong>
+                                            Solution
+                                        </strong>
+                                    </h5>
+                                    <div class="cell">
+                                        <p>A message that contains To and From addresses, Command string or
+                                            enumeration, List
+                                            of strings to hold file names, and a string body to hold logs will suffice
+                                            for
+                                            all needed operations in case of defining a single message structure that
+                                            work
+                                            for all messages used in the Federation. Also, storing Endpoint information
+                                            in
+                                            XML file resident with all clients and servers and load at startup can help
+                                            managing
+                                            Endpoint information for Repository, Mother Builder, and Test Harness.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+.door-opening-alert-system {
+    .img__container {
+        width: 800px;
+        padding: 2rem;
+        margin: auto;
+    }
+
+
+    .motion-detection-img__container {
+        width: 450px;
+        padding: 2rem;
+        margin: auto;
+    }
+
+    .email-notification1-img__container {
+        width: 500px;
+        padding: 2rem;
+        margin: auto;
+    }
+
+    .email-notification2-img__container {
+        width: 700px;
+        padding: 2rem;
+        margin: auto;
+    }
+
+    .webcam-desk__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .webcam-desk-lamp-img__container {
+        width: 400px;
+        padding: 2rem;
+    }
+
+    .door-opening-system-img__container {
+        width: 600px;
+        padding: 2rem;
+        margin: auto;
+    }
+
+    .photo-capture__wrapper {
+        display: flex;
+        justify-content: center; 
+    }
+
+    .photo-capture-img__container {
+        width: 300px;
+        padding: .5rem;
+    }
+}

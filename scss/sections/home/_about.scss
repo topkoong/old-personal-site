@@ -1,0 +1,153 @@
+.about {
+    margin-top: 5rem;
+    background-color: #fff;
+
+    .about-container {
+        // animation: 5s cubic-bezier(0.075, 0.82, 0.165, 1) borderAnimation forwards;
+        animation: 5s ease-in-out aboutBorderAnimation forwards;
+        padding: 5rem;
+        @include breakpoint(small only) {
+            padding: 1rem;
+        }
+    
+    }
+    .header-secondary {
+        font-size: 40px;
+        font-weight: 500;
+        &--highlight {
+            color: $color-orange;
+        }
+        @include breakpoint(small only) {
+            font-size: 30px;
+        }
+    }
+
+    .box-container {
+        display: flex;
+        align-items: center;
+        @include breakpoint(medium down) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .img-container {
+        width: 500px;
+        padding: 3rem;
+        margin: auto;
+        flex-shrink: 0;
+        @include breakpoint(small only) {
+            padding: 1rem;
+            width: auto;
+        }
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+    }
+
+    .bio {
+        font-size: 14px;
+        margin-bottom: 2rem;
+    }
+
+    .order-1 {
+        order: 1;
+    }
+
+    .order-2 {
+        order: 2;
+    }
+
+
+    .exp {
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+    .work-exp {
+        margin-top: .5em;
+        &__list {
+            list-style: none;
+            border-bottom: 2px dashed $color-orange;
+            margin-bottom: 1.5rem;
+            &:first-child {
+                @include breakpoint(small only) {
+                    text-align: center;
+                }
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .img-title__wrapper {
+            display: flex;
+            align-items: center;
+            flex-wrap: 0;
+            margin-bottom: 1rem;
+            @include breakpoint(small only) {
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        &__img__container-1 {
+            width: 70px;
+        }
+
+        &__img__container-2 {
+            width: 100px;
+        }
+
+        &__img__container-3 {
+            width: 50px;
+        }
+
+        .company-link {
+            text-decoration: underline;
+            color: #808080;
+        }
+
+        &__title {
+            color: #808080;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            margin-left: 1rem;
+            @include breakpoint(small only) {
+                margin-top: 1rem;
+                font-size: 15px;
+            }
+        }
+
+        &__duration {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            color: $dark-gray;
+            //margin-left: rem-calc(10);
+            @include breakpoint(small only) {
+                text-align: center;
+            }
+        }
+
+        &__role {
+            font-family: 'Oswald', sans-serif;
+            padding: .5rem;
+            color: #5c5c5c;
+            font-weight: 500;
+            font-size: 15px;
+            @include breakpoint(small only) {
+                font-size: 13px;
+                text-align: left;
+            }
+        }
+    }
+
+    .btn-container {
+        text-align: center;
+    }
+
+
+}

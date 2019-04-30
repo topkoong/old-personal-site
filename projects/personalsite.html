@@ -1,0 +1,328 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Site</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navigation-top">
+            <ul class="menu align-center">
+                <li>
+                    <a href="/index.html" class="menu__link">Home</a>
+                </li>
+                <li>
+                    <a href="/index.html" class="menu__link">About Me</a>
+                </li>
+                <li>
+                    <a href="/project.html" class="menu__link">Projects</a>
+                </li>
+                <li>
+                    <a href="/contact.html" class="menu__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="personal-site">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <h1 class="header-primary">
+                        Personal Site</h1>
+                    <h4>
+                        <strong>
+                            Designed, Developed &amp; Deployed portfolio web application to acquire new skills in web
+                            development technologies.
+                        </strong>
+                    </h4>
+
+
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <ul class="sub-list">
+                    <li>
+                        <strong>Technologies Used:</strong> React, Nodejs, Express, MongoDB, Passport</li>
+                    <li>
+                        <strong>Creator:</strong> Theerut Foongkiatcharoen</li>
+                </ul>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h2>Concept Summary</h2>
+                    <ul>
+                        <li>Create an instant portfolio</li>
+                        <li>Acquire new skills in modern web development technologies</li>
+                        <li>Explore the new world of JavaScript-Focused Client-side web development</li>
+                        <li>It helps recruiters find me much more easily.</li>
+                    </ul>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Application Architecture</strong></h4>
+                    <div class="application-architecture-img__container">
+                        <img src="/images/projects/personalsite/application-architecture.jpg" class="image" alt="Package Diagram">
+                    </div>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Normal DOM – How it Works</strong></h4>
+                    <ul>
+                        <li>When a node is updated, the browser updates (re-renders) all nodes</li>
+                    </ul>
+                    <div class="normal-DOM-img__container">
+                        <img src="/images/projects/personalsite/normalDOM.png" class="image" alt="Package Diagram">
+                    </div>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>VirtualDOM – How it Works</strong></h4>
+                    <ul>
+                        <li>When a node is updated, two things occur
+                            <ul>
+                                <li>
+                                    <span>“diff”</span> to determine which nodes within DOM have changed
+                                </li>
+                                <li>
+                                    <span>“reconciliation”</span> to update the nodes that are affected
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="virtual-DOM-img__container">
+                        <img src="/images/projects/personalsite/virtualDOM.png" class="image" alt="Package Diagram">
+                    </div>
+                    <hr>
+                    <div class="virtual-DOM-img-2__container">
+                        <img src="/images/projects/personalsite/virtualDOM2.png" class="image" alt="Package Diagram">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>In order to render this element to the actual DOM tree we need to use <code>ReactDOM.render()</code>.</strong></h5>
+                    <h5 class="u-add-tb-margin"><strong><code>ReactDOM.render()</code> requires two things: </strong></h5>
+                    <ul class="list-decimal">
+                        <li>The root of our virtual tree</li>
+                        <li>the mount location where we want React write to the actual browser DOM</li>
+                    </ul>
+                    <h5 class="u-add-tb-margin"><strong>In our simple template we want to get access to the div tag with an id of root so that we can get a reference to our actual DOM root element</h5>
+                    <pre class="code-snap">
+                        import React from 'react';
+                        import ReactDOM from 'react-dom';
+
+                        // Example
+                        // ReactDOM.render(element, container[, callback]);
+
+                        /*
+                        Note:
+
+                            Render a React element into the DOM in the supplied container and return a reference to the component (or returns null for stateless components).
+
+                            If the React element was previously rendered into container, this will perform an update on it and only mutate the DOM as necessary to reflect the latest React element.
+
+                            If the optional callback is provided, it will be executed after the component is rendered or updated.
+
+                            ReactDOM.render() controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
+
+                            ReactDOM.render() does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.
+
+                            ReactDOM.render() currently returns a reference to the root ReactComponent instance. However, using this return value is legacy and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root ReactComponent instance, the preferred solution is to attach a callback ref to the root element.
+
+                            Using ReactDOM.render() to hydrate a server-rendered container is deprecated and will be removed in React 17. Use hydrate() instead.
+                        */
+
+                            const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;
+                            ReactDOM.render(element, document.getElementById('root'));
+
+                    </pre>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Relationship between Node and Express</strong></h4>
+                    <div class="node-express-img__container">
+                        <img src="/images/projects/personalsite/nodeandexpressrelationship.jpg" class="image" alt="Package Diagram">
+                    </div>
+                    <pre class="code-snap">
+                        const express = require("express");
+                        const mongoose = require("mongoose");
+                        const cookieSession = require("cookie-session");
+                        const passport = require("passport");
+                        const bodyParser = require("body-parser");
+                        const keys = require("./config/keys");
+                        require("./models/User");
+                        require("./models/Project");
+                        require("./models/Blog");
+                        require("./models/Profile");
+                        require("./services/passport");
+                        
+                        mongoose.connect(keys.mongoURI);
+
+                        // Create the app object using our imported express module
+                        const app = express();
+
+                        // The next set of functions call app.use() to add the middleware libraries into the request handling chain.
+                        
+                        app.use(bodyParser.json({ limit: "50mb" }));
+                        
+                        app.use(
+                            cookieSession({
+                            // I want this cookie to last 30 days before it's expired.
+                            maxAge: 30 * 24 * 60 * 60 * 1000,
+                            keys: [keys.cookieKey]
+                            })
+                        );
+                        
+                        app.use(passport.initialize());
+                        app.use(passport.session());
+                        
+                        require("./routes/authRoutes")(app);
+                        require("./routes/projectRoutes")(app);
+                        require("./routes/blogRoutes")(app);
+                        require("./routes/profileRoutes")(app);
+                        
+                        if (process.env.NODE_ENV === "production") {
+                            // Express will serve up production assets
+                            // like our main.js file, or main.css file!
+                            app.use(express.static("client/build"));
+                        
+                            // Express will serve up the index.html file
+                            // if it doesn't recognize the route
+                            const path = require("path");
+                            app.get("*", (req, res) => {
+                            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+                            });
+                        }
+
+                        // The final block starts up the server on port '5000' or whatever is in the environment variable PORT.
+                        // Cloud hosts like Heroku or Azure, however, use the PORT variable to tell you on which port your server should listen for the routing to work properly.
+                        
+                        const PORT = process.env.PORT || 5000;
+                        app.listen(PORT);
+                    </pre>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Express Route Handlers</strong></h4>
+                    <div class="express-img__container">
+                        <img src="/images/projects/personalsite/expressroutehandler.png" class="image" alt="Package Diagram">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>The following example illustrates defining a simple route.</strong></h5>
+                    <pre class="code-snap">
+                        // GET method route
+                        app.get("/api/blogPosts", async (req, res) => {
+                            const blogs = await blogPost.find();
+                            res.send(blogs);
+                        });
+                    </pre>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+
+
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Database (MongoDB)</strong></h4>
+                    <div class="mongodb-img__container">
+                        <img src="/images/projects/personalsite/db1.png" class="image" alt="Package Diagram">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Defining a user schema</strong></h5>
+                    <pre class="code-snap">
+                        // Define schema
+                        const mongoose = require('mongoose');
+                        const { Schema } = mongoose;
+                        
+                        const userSchema = new Schema({
+                            googleId: String,
+                            displayName: String,
+                            image: String
+                        });
+                        // Compile model from schema
+                        mongoose.model('users', userSchema);
+                    </pre>
+                    <hr>
+                    <div class="mongodb-img__container">
+                        <img src="/images/projects/personalsite/db2.png" class="image" alt="Package Diagram">
+                    </div>
+                    <h5 class="u-add-tb-margin"><strong>Defining a blog schema and Creating a model</strong></h5>
+                    <h6 class="u-add-tb-margin"><strong>Models are created from schemas using the <code>mongoose.model()</code>
+                            method:</strong></h6>
+                    <pre class="code-snap">
+                        // Define schema
+                        const mongoose = require('mongoose');
+                        const { Schema } = mongoose;
+                        
+                        const blogSchema = new Schema({
+                            title: String,
+                            author: String,
+                            tag: String,
+                            body: String,
+                            _user: { type: Schema.Types.ObjectId, ref: 'User' },
+                            datePosted: { type: Date, default: Date.now }
+                        });
+                        // Compile model from schema
+                        mongoose.model('blogPosts', blogSchema);
+                    </pre>
+                    <h5 class="u-add-tb-margin"><strong>Defining a user schema and Searching for a record</strong></h5>
+                    <h6 class="u-add-tb-margin"><strong>You can search for records using query methods, specifying the
+                            query conditions as a JSON document. For instance, using the <code>findOne()</code> method
+                            will find a single document that matches the specified criteria.</strong></h6>
+                    <pre class="code-snap">
+                        const mongoose = require("mongoose");
+                        const blogPost = mongoose.model("blogPosts");
+                        module.exports = app => {
+                            // fetch a single blog post
+                            app.get("/api/blogPosts/:id", async (req, res) => {
+                              const blog = await blogPost.findOne({
+                                _id: req.params.id
+                              });
+                              res.send(blog);
+                            });
+                        }
+                    </pre>
+                    <hr>
+                    <div class="mongodb-img__container">
+                        <img src="/images/projects/personalsite/db3.png" class="image" alt="Package Diagram">
+                    </div>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Summary</strong></h4>
+                    <ul>
+                        <li>A user is able to use different methods to create different route handlers that are
+                            associated with
+                            different purposes of incoming requests. (GET,POST,PUT,DELETE)</li>
+                        <li>A user is able to authenticate with Google Oauth.</li>
+                        <li>A user can perform CRUD operations to a project, profile and blog post.</li>
+                    </ul>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

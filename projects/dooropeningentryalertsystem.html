@@ -1,0 +1,354 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door Opening Entry Alert System</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navigation-top">
+            <ul class="menu align-center">
+                <li>
+                    <a href="/index.html" class="menu__link">Home</a>
+                </li>
+                <li>
+                    <a href="/index.html" class="menu__link">About Me</a>
+                </li>
+                <li>
+                    <a href="/project.html" class="menu__link">Projects</a>
+                </li>
+                <li>
+                    <a href="/contact.html" class="menu__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="door-opening-alert-system">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <h1 class="header-primary">
+                        Door Opening Entry Alert System</h1>
+                    <h4 class="u-add-tb-margin">
+                        <strong>
+                            Designed &amp; Developed Internet Connected hardware using BeagleBone Black, PIR motion
+                            sensor &amp; webcam to detect movement.
+                        </strong>
+                    </h4>
+                    <h4>
+                        <strong>
+                            Designed notification system to notify user via email containing detailed description &
+                            photo when somebody opens door.
+                        </strong>
+                    </h4>
+
+
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <ul class="sub-list">
+                    <li>
+                        <strong>Technologies Used:</strong> Debian GNU/Linux, Python, BeagleBone Black, PIR Motion
+                        Sensor, Webcam</li>
+                    <li>
+                        <strong>Creator:</strong> Theerut Foongkiatcharoen</li>
+                </ul>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>What's the idea here?</strong></h4>
+                    <div class="project-description">
+                        <p>Home security and privacy is a something people are always worried about in this day of age.
+                            After all, anything can happen if you are not careful and there is stuff in our life we are
+                            not ready to share. Since life is unpredictable, people want to feel safe and secure. Not
+                            only that people want safety but they want control over their safety and privacy. This is
+                            probably why people are purchasing home automation system, surveillance cameras, alert
+                            systems and security systems for their house. These devices are not 100% foolproof but
+                            there is a layer of protection. Mainly it is the protection of security and privacy. There
+                            is even a device that alerts people when a door is opened. We created this exact system.
+                        </p>
+                        <p>With our system, people will know not only that door has been touched but also who has used
+                            your door. Moreover, the individual is sent a photo through email regarding the door
+                            activity. This door opening system also comes equipped with a video capture and streaming
+                            option. The paper is about our project of a door opening alert system. This paper will go
+                            in depth on the design of the door opening entry alert system, our approaches of doing so,
+                            our results and observations from constructing the door opening entry alert system. In
+                            addition, this paper will go over some of the features that our door opening system
+                            possesses. Also, we will discuss the hardware used to construct our door opening system. It
+                            might be for your entire house, your room will never be more secure. Ultimately this paper
+                            is talking about the creation of our door opening system. </p>
+                        <p>The objective of my project is to create a door opening system with video capture and
+                            streaming capabilities. The platform used for the door opening alert system is the Beagle
+                            Bone Black, and the Operating System for this system is Debian. The communications used
+                            in this system is SMTP protocol, email: The door opening alert system will notify the user
+                            via email. The email will consist of a photo capture, the date, and the time of the photo
+                            capture. The email sends the user the photo captured the moment a person opens the door.
+                            The email will be in the user’s inbox in a short time, and so will the video be able to
+                            capture to the user in specified time, and the sensors for the Door Opening Entry Alert
+                            system can be implemented with a PIR motion detector. Since this system can run for 24
+                            hours per day and 7 days a week, Door Opening Entry Alert System has to be connected to the
+                            internet all the time. The relevance to this system is for home security and a piece of
+                            mind. The system will notify you if anyone or anything is entering your property at any
+                            time. As a result, the user will know who, when and what was messing with your property.
+                            Because of its photo capture abilities, it can also be used to identify an individual, and
+                            there is an effort to make this system cheap and considering the price of a webcam, motion
+                            sensor and breadboard, the cost and the risk for this system is relatively low.
+                        </p>
+                        <hr>
+                        <h5 class="u-add-tb-margin u-add-l-margin"><strong>Sketch for Door Opening Entry Alert System</strong></h5>
+                        <div class="img__container">
+                            <img src="/images/projects/dooropeningentryalertsystem/prototype-sketch.png" class="image"
+                                alt="Package Diagram">
+                        </div>
+                        <h5 class="u-add-tb-margin u-add-l-margin"><strong>Hardware Equipments</strong></h5>
+                        <ul>
+                            <li class="u-add-l-margin">
+                                <h6 class="u-add-tb-margin"><strong>Webcam</strong></h6>
+                                <div class="img__container">
+                                    <img src="/images/projects/dooropeningentryalertsystem/webcam.png" class="image"
+                                        alt="Package Diagram">
+                                </div>
+                            </li>
+                            <li class="u-add-l-margin">
+                                <h6 class="u-add-tb-margin"><strong>Jumper Wires</strong></h6>
+                                <div class="img__container">
+                                    <img src="/images/projects/dooropeningentryalertsystem/jumper-wire.png" class="image"
+                                        alt="Package Diagram">
+                                </div>
+                            </li>
+                            <li class="u-add-l-margin">
+                                <h6 class="u-add-tb-margin"><strong>PIR Motion Sensor</strong></h6>
+                                <div class="img__container">
+                                    <img src="/images/projects/dooropeningentryalertsystem/pir-motion-sensor.png" class="image"
+                                        alt="Package Diagram">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Hardware Design</strong></h4>
+                    <div class="img__container">
+                        <img src="/images/projects/dooropeningentryalertsystem/hardware-design.png" class="image" alt="Package Diagram">
+                    </div>
+                    <ul class="u-add-l-margin">
+                        <li>
+                            <h5 class="u-add-tb-margin"><strong>Communication</strong></h5>
+                            <p>SMTP protocol, email: The door opening alert system will notify the user via
+                                email. The email consists of message and a photo capture.</p>
+                        </li>
+                        <li>
+                            <h5 class="u-add-tb-margin"><strong>Sensors</strong></h5>
+                            <p>The Door Opening Entry Alert system can be implemented with either a PIR
+                                motion detector or an accelerometer.</p>
+                        </li>
+                        <li>
+                            <h5 class="u-add-tb-margin"><strong>Hardware design and implementation</strong></h5>
+                            <p>BeagleBone Black is connected with USB Cam over USB port and with PIR
+                                motion detector using wires connected to ground, DC, and digital input.</p>
+                        </li>
+                        <li>
+                            <h5 class="u-add-tb-margin"><strong>Software design and implementation</strong></h5>
+                            <p>There are three main modules which are motion detector, photo capture, and
+                                sending notification email. These modules were written in Python language.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Methodology and Technical approach</strong></h4>
+                    <p>The door opening entry alert system goes through this process. A person opens the door, and then
+                        PIR sensor detects the person opening the door. Afterwards, the webcam will take the photo and
+                        then emails that photo with the date and time stamp. In order to achieve this, a breadboard and
+                        additional wires is required for the design. It is required to connect the PIR sensor to the
+                        Beaglebone Black. Without it, the PIR sensor will not respond to the Beaglebone Black. Now the
+                        photo is captured when the door is open. This works well since there is no flash on these USB
+                        webcams.</p>
+                    <p>As a result, the person will not know that their picture captured and send to the user. One
+                        problem is that sometimes it does not capture the entire person when the photo is captured.
+                        However, this depends on where the camera is positioned. The email sent to the user consists of
+                        the date and time of the photo and the photo itself. This was a plan to have the system use a
+                        network adapter so the system does not have to connect to the computer. The reason we did not
+                        include is it is easier to use the Ethernet cable. After all, everybody has an Ethernet cable
+                        in the home.</p>
+                    <div class="img__container">
+                        <img src="/images/projects/dooropeningentryalertsystem/hardware-design.png" class="image" alt="Package Diagram">
+                    </div>
+                    <ul class="u-add-l-margin">
+                        <li>
+                            <h5 class="u-add-tb-margin"><strong>Main file using Adafruit library as GPIO</strong></h5>
+                            <div class="img__container">
+                                <img src="/images/projects/dooropeningentryalertsystem/python-main-file.png" class="image"
+                                    alt="Package Diagram">
+                            </div>
+                        </li>
+                        <li>
+                            <h5 class="u-add-tb-margin"><strong>Photo capture using opencv library</strong></h5>
+                            <div class="img__container">
+                                <img src="/images/projects/dooropeningentryalertsystem/python-photo-capture.png" class="image"
+                                    alt="Package Diagram">
+                            </div>
+                        </li>
+                        <li>
+                            <h5 class="u-add-tb-margin"><strong>Sending notification via email using python library</strong></h5>
+                            <div class="img__container">
+                                <img src="/images/projects/dooropeningentryalertsystem/python-photo-capture.png" class="image"
+                                    alt="Package Diagram">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cell">
+                    <hr>
+                </div>
+                <div class="cell">
+                    <h4 class="u-add-tb-margin"><strong>Results and Analysis</strong></h4>
+                    <p>The program for sending a simple email message with attachment, capturing a photo via
+                        USB cam, and motion detector are written in python language. These modules are
+                        completed, but they are still separated and just test cases. Therefore, to verify the system,
+                        the separated modules need to be combined into one file and tested together. The
+                        BeagleBone Black needs to connect to the power and the internet all the time to work
+                        properly. However, the pictures that we received have high noise and are not that
+                        obvious, especially during night time. Currently, we implement the system with simple
+                        USBcam due to low budget; nevertheless, it would be much better if we can implement
+                        this system with a high definition camera including advanced night vision feature so that
+                        we can receive a high-resolution photo. Similarly, the range of this normal PIR motion
+                        detector is not that far. Thus, it would be much better if we can implement this system
+                        with PIR motion detector providing further range. If we change these hardware
+                        equipment, we will definitely obtain a better result and performance even though this new
+                        hardware equipment costs a lot of money.
+                    </p>
+                    <p>Overall, the system works the way it was designed.  Our approach was good.  The motion sensor was able to detect motion; the photo capture module captured a photo when the door is opened.  We got the door opening entry alert system finished an one week early.  Adding the video capture module is something we decided to add at the spare of moment.  However, the video capture works well especially with the Logitech C920.  We are generally happy with how this system turned out.  Our results are shown below.</p>
+                    <p>Project photos are the following:</p>
+                    <div class="img__container">
+                        <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/12931237_10208579133011811_4696454708409709712_n.jpg?_nc_cat=0&oh=2b20e55ca0f3d7a9c50e7cb05abdde88&oe=5BF32FB5"
+                            class="image" alt="Hardware and equipment">
+                        <p class="caption">Hardware and equipment</p>
+                    </div>
+                    <div class="img__container">
+                        <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/995375_10208578967567675_2628846251000006066_n.jpg?_nc_cat=0&oh=5dcb323fbc455fc66289c9dde8368950&oe=5C30D737"
+                            class="image" alt="Hardware and equipment">
+                        <p class="caption">Hardware and equipment</p>
+                    </div>
+                    <div class="img__container">
+                        <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/12512218_10208563454099848_236659729143554592_n.jpg?_nc_cat=0&oh=cc6a399da84b12196c0819e2cf9fd099&oe=5C312AA1"
+                            class="image" alt="Hardware and equipment">
+                        <p class="caption">Hardware and equipment</p>
+                    </div>
+                    <div class="motion-detection-img__container">
+                        <img src="/images/projects/dooropeningentryalertsystem/motion-detection.png" class="image" alt="Test case of motion detection, a separated module">
+                        <p class="caption">Test case of motion detection, a separated module</p>
+                    </div>
+                    <div class="motion-detection-img__container">
+                        <img src="/images/projects/dooropeningentryalertsystem/motion-detection-2.png" class="image"
+                            alt="Test case of motion detection, a separated module">
+                        <p class="caption">Test case of motion detection, a separated module</p>
+                    </div>
+                    <div class="email-notification1-img__container">
+                        <img src="/images/projects/dooropeningentryalertsystem/email-notification1.png" class="image"
+                            alt="Test case of sending email using SMTP, a separated module">
+                        <p class="caption">Test case of sending email using SMTP, a separated module</p>
+                    </div>
+                    <div class="email-notification2-img__container">
+                        <img src="/images/projects/dooropeningentryalertsystem/email-notification2.png" class="image"
+                            alt="Test case of sending email using SMTP, a separated module">
+                        <p class="caption">Test case of sending email using SMTP, a separated module</p>
+                    </div>
+                    <div class="webcam-desk__wrapper">
+                        <div class="webcam-desk-lamp-img__container">
+                            <img src="/images/projects/dooropeningentryalertsystem/webcam-desk-lamp1.png" class="image"
+                                alt="A web cam and motion sensor attached to a desk lamp">
+                            <p class="caption">A web cam and motion sensor attached to a desk lamp</p>
+                        </div>
+                        <div class="webcam-desk-lamp-img__container">
+                            <img src="/images/projects/dooropeningentryalertsystem/webcam-desk-lamp2.png" class="image"
+                                alt="A web cam and motion sensor attached to a desk lamp">
+                            <p class="caption">A web cam and motion sensor attached to a desk lamp</p>
+                        </div>
+                    </div>
+
+                    <div class="door-opening-system-img__container">
+                        <img src="/images/projects/dooropeningentryalertsystem/door-opening-alert-system.png" class="image"
+                            alt="Test case of door opening entry alert system">
+                        <p class="caption">Test case of door opening entry alert system</p>
+                    </div>
+                    <div class="email-notification2-img__container">
+                        <img src="/images/projects/dooropeningentryalertsystem/email-notification3.png" class="image"
+                            alt="Test case of email notification after combining all modules together">
+                        <p class="caption">Test case of email notification after combining all modules together</p>
+                    </div>
+                    <div class="photo-capture__wrapper">
+                        <div class="photo-capture-img__container">
+                            <img src="/images/projects/dooropeningentryalertsystem/photo-capturing1.png" class="image"
+                                alt="Test case of photo capturing after combining all modules together">
+                            <p class="caption">Test case of photo capturing after combining all modules together</p>
+                        </div>
+                        <div class="photo-capture-img__container">
+                            <img src="/images/projects/dooropeningentryalertsystem/photo-capturing2.png" class="image"
+                                alt="Test case of photo capturing after combining all modules together">
+                            <p class="caption">Test case of photo capturing after combining all modules together</p>
+                        </div>
+                        <div class="photo-capture-img__container">
+                            <img src="/images/projects/dooropeningentryalertsystem/photo-capturing3.png" class="image"
+                                alt="Test case of photo capturing after combining all modules together">
+                            <p class="caption">Test case of photo capturing after combining all modules together</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cell">
+                        <hr>
+                    </div>
+                    <div class="cell">
+                        <h4 class="u-add-tb-margin"><strong>Future Work</strong></h4>
+                        <h5 class="u-add-tb-margin"><strong>Sending notification via email using python library</strong></h5>
+                        <ul>
+                            <li>Creating a website that we can remote video monitoring and recording</li>
+                            <li>Changing all sequential codes to dynamic codes using threads</li>
+                            <li>Viewing secure real-time video from website</li>
+                            <li>Replacing an old camera with a high-resolution camera including advanced night
+                                    vision feature</li>
+                            <li>Replacing an old motion with a better one that can capture the movement further
+                                    than this one</li>
+                            <li>Adding the cameras to the windows to make your home more secure</li>
+                            <li>Adding Lighting and thermostat control</li>
+                            <li>Adding water and temperature sensor and smoke detection to check home security</li>
+                            <li>Adding face detection using opencv</li>
+                            <li>Adding GPS system to send location to the police station</li>
+                            <li>Creating a data logging so we can check later</li>
+                        </ul>
+                        </div>
+
+                        <div class="cell">
+                                <hr>
+                            </div>
+                            <div class="cell">
+                                <h4 class="u-add-tb-margin"><strong>Conclusion</strong></h4>
+                                <p>A door opening alert system using the Beagle Bone Black can achieve the goal we set, but
+                                        it would be much better we can implement future work and change hardware equipment to
+                                        obtain better result and performance.</p>
+                                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
