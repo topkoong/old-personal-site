@@ -118,33 +118,32 @@
                     </ul>
                     <h5 class="u-add-tb-margin"><strong>In our simple template we want to get access to the div tag with an id of root so that we can get a reference to our actual DOM root element</h5>
                     <pre class="code-snap">
-                        import React from 'react';
-                        import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-                        // Example
-                        // ReactDOM.render(element, container[, callback]);
+// Example
+// ReactDOM.render(element, container[, callback]);
 
-                        /*
-                        Note:
+/*
+Note:
 
-                            Render a React element into the DOM in the supplied container and return a reference to the component (or returns null for stateless components).
+    Render a React element into the DOM in the supplied container and return a reference to the component (or returns null for stateless components).
 
-                            If the React element was previously rendered into container, this will perform an update on it and only mutate the DOM as necessary to reflect the latest React element.
+    If the React element was previously rendered into container, this will perform an update on it and only mutate the DOM as necessary to reflect the latest React element.
 
-                            If the optional callback is provided, it will be executed after the component is rendered or updated.
+    If the optional callback is provided, it will be executed after the component is rendered or updated.
 
-                            ReactDOM.render() controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
+    ReactDOM.render() controls the contents of the container node you pass in. Any existing DOM elements inside are replaced when first called. Later calls use React’s DOM diffing algorithm for efficient updates.
 
-                            ReactDOM.render() does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.
+    ReactDOM.render() does not modify the container node (only modifies the children of the container). It may be possible to insert a component to an existing DOM node without overwriting the existing children.
 
-                            ReactDOM.render() currently returns a reference to the root ReactComponent instance. However, using this return value is legacy and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root ReactComponent instance, the preferred solution is to attach a callback ref to the root element.
+    ReactDOM.render() currently returns a reference to the root ReactComponent instance. However, using this return value is legacy and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root ReactComponent instance, the preferred solution is to attach a callback ref to the root element.
 
-                            Using ReactDOM.render() to hydrate a server-rendered container is deprecated and will be removed in React 17. Use hydrate() instead.
-                        */
+    Using ReactDOM.render() to hydrate a server-rendered container is deprecated and will be removed in React 17. Use hydrate() instead.
+*/
 
-                            const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;
-                            ReactDOM.render(element, document.getElementById('root'));
-
+const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;
+ReactDOM.render(element, document.getElementById('root'));
                     </pre>
                 </div>
                 <div class="cell">
@@ -156,61 +155,61 @@
                         <img src="/images/projects/personalsite/nodeandexpressrelationship.jpg" class="image" alt="Package Diagram">
                     </div>
                     <pre class="code-snap">
-                        const express = require("express");
-                        const mongoose = require("mongoose");
-                        const cookieSession = require("cookie-session");
-                        const passport = require("passport");
-                        const bodyParser = require("body-parser");
-                        const keys = require("./config/keys");
-                        require("./models/User");
-                        require("./models/Project");
-                        require("./models/Blog");
-                        require("./models/Profile");
-                        require("./services/passport");
-                        
-                        mongoose.connect(keys.mongoURI);
+const express = require("express");
+const mongoose = require("mongoose");
+const cookieSession = require("cookie-session");
+const passport = require("passport");
+const bodyParser = require("body-parser");
+const keys = require("./config/keys");
+require("./models/User");
+require("./models/Project");
+require("./models/Blog");
+require("./models/Profile");
+require("./services/passport");
 
-                        // Create the app object using our imported express module
-                        const app = express();
+mongoose.connect(keys.mongoURI);
 
-                        // The next set of functions call app.use() to add the middleware libraries into the request handling chain.
-                        
-                        app.use(bodyParser.json({ limit: "50mb" }));
-                        
-                        app.use(
-                            cookieSession({
-                            // I want this cookie to last 30 days before it's expired.
-                            maxAge: 30 * 24 * 60 * 60 * 1000,
-                            keys: [keys.cookieKey]
-                            })
-                        );
-                        
-                        app.use(passport.initialize());
-                        app.use(passport.session());
-                        
-                        require("./routes/authRoutes")(app);
-                        require("./routes/projectRoutes")(app);
-                        require("./routes/blogRoutes")(app);
-                        require("./routes/profileRoutes")(app);
-                        
-                        if (process.env.NODE_ENV === "production") {
-                            // Express will serve up production assets
-                            // like our main.js file, or main.css file!
-                            app.use(express.static("client/build"));
-                        
-                            // Express will serve up the index.html file
-                            // if it doesn't recognize the route
-                            const path = require("path");
-                            app.get("*", (req, res) => {
-                            res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-                            });
-                        }
+// Create the app object using our imported express module
+const app = express();
 
-                        // The final block starts up the server on port '5000' or whatever is in the environment variable PORT.
-                        // Cloud hosts like Heroku or Azure, however, use the PORT variable to tell you on which port your server should listen for the routing to work properly.
-                        
-                        const PORT = process.env.PORT || 5000;
-                        app.listen(PORT);
+// The next set of functions call app.use() to add the middleware libraries into the request handling chain.
+
+app.use(bodyParser.json({ limit: "50mb" }));
+
+app.use(
+    cookieSession({
+    // I want this cookie to last 30 days before it's expired.
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+    })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+require("./routes/authRoutes")(app);
+require("./routes/projectRoutes")(app);
+require("./routes/blogRoutes")(app);
+require("./routes/profileRoutes")(app);
+
+if (process.env.NODE_ENV === "production") {
+    // Express will serve up production assets
+    // like our main.js file, or main.css file!
+    app.use(express.static("client/build"));
+
+    // Express will serve up the index.html file
+    // if it doesn't recognize the route
+    const path = require("path");
+    app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    });
+}
+
+// The final block starts up the server on port '5000' or whatever is in the environment variable PORT.
+// Cloud hosts like Heroku or Azure, however, use the PORT variable to tell you on which port your server should listen for the routing to work properly.
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
                     </pre>
                 </div>
                 <div class="cell">
@@ -223,11 +222,11 @@
                     </div>
                     <h5 class="u-add-tb-margin"><strong>The following example illustrates defining a simple route.</strong></h5>
                     <pre class="code-snap">
-                        // GET method route
-                        app.get("/api/blogPosts", async (req, res) => {
-                            const blogs = await blogPost.find();
-                            res.send(blogs);
-                        });
+// GET method route
+app.get("/api/blogPosts", async (req, res) => {
+    const blogs = await blogPost.find();
+    res.send(blogs);
+});
                     </pre>
                 </div>
                 <div class="cell">
@@ -242,17 +241,17 @@
                     </div>
                     <h5 class="u-add-tb-margin"><strong>Defining a user schema</strong></h5>
                     <pre class="code-snap">
-                        // Define schema
-                        const mongoose = require('mongoose');
-                        const { Schema } = mongoose;
-                        
-                        const userSchema = new Schema({
-                            googleId: String,
-                            displayName: String,
-                            image: String
-                        });
-                        // Compile model from schema
-                        mongoose.model('users', userSchema);
+// Define schema
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const userSchema = new Schema({
+    googleId: String,
+    displayName: String,
+    image: String
+});
+// Compile model from schema
+mongoose.model('users', userSchema);
                     </pre>
                     <hr>
                     <div class="mongodb-img__container">
@@ -262,37 +261,37 @@
                     <h6 class="u-add-tb-margin"><strong>Models are created from schemas using the <code>mongoose.model()</code>
                             method:</strong></h6>
                     <pre class="code-snap">
-                        // Define schema
-                        const mongoose = require('mongoose');
-                        const { Schema } = mongoose;
-                        
-                        const blogSchema = new Schema({
-                            title: String,
-                            author: String,
-                            tag: String,
-                            body: String,
-                            _user: { type: Schema.Types.ObjectId, ref: 'User' },
-                            datePosted: { type: Date, default: Date.now }
-                        });
-                        // Compile model from schema
-                        mongoose.model('blogPosts', blogSchema);
+// Define schema
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+
+const blogSchema = new Schema({
+    title: String,
+    author: String,
+    tag: String,
+    body: String,
+    _user: { type: Schema.Types.ObjectId, ref: 'User' },
+    datePosted: { type: Date, default: Date.now }
+});
+// Compile model from schema
+mongoose.model('blogPosts', blogSchema);
                     </pre>
                     <h5 class="u-add-tb-margin"><strong>Defining a user schema and Searching for a record</strong></h5>
                     <h6 class="u-add-tb-margin"><strong>You can search for records using query methods, specifying the
                             query conditions as a JSON document. For instance, using the <code>findOne()</code> method
                             will find a single document that matches the specified criteria.</strong></h6>
                     <pre class="code-snap">
-                        const mongoose = require("mongoose");
-                        const blogPost = mongoose.model("blogPosts");
-                        module.exports = app => {
-                            // fetch a single blog post
-                            app.get("/api/blogPosts/:id", async (req, res) => {
-                              const blog = await blogPost.findOne({
-                                _id: req.params.id
-                              });
-                              res.send(blog);
-                            });
-                        }
+const mongoose = require("mongoose");
+const blogPost = mongoose.model("blogPosts");
+module.exports = app => {
+    // fetch a single blog post
+    app.get("/api/blogPosts/:id", async (req, res) => {
+        const blog = await blogPost.findOne({
+        _id: req.params.id
+        });
+        res.send(blog);
+    });
+}
                     </pre>
                     <hr>
                     <div class="mongodb-img__container">
