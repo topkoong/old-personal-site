@@ -3,47 +3,79 @@
         width: 600px;
         padding: 2rem;
         margin: auto;
+        @include breakpoint(small only) {
+            width: 300px;
+            padding: 0;
+        }
     }
 
     .use-case-diagram-img__container {
         width: 600px;
         padding: 2rem;
         margin: auto;
+        @include breakpoint(small only) {
+            width: 300px;
+            padding: 0;
+        }
     }
 
     .activity-diagram-img__container {
         width: 600px;
         padding: 2rem;
         margin: auto;
+        @include breakpoint(small only) {
+            width: 300px;
+            padding: 0;
+        }
     }
 
     .activity-diagram-img-2__container {
         width: 800px;
         padding: 2rem;
         margin: auto;
+        @include breakpoint(small only) {
+            width: 400px;
+            padding: 0;
+        }
     }
 
     .sequence-diagram-img__container {
         width: 1000px;
         padding: 2rem;
         margin: auto;
+        @include breakpoint(small only) {
+            width: 300px;
+            padding: 0;
+        }
     }
 
     .class-diagram-img__container {
         width: 300px;
         padding: 2rem;
         margin: auto;
+        @include breakpoint(small only) {
+            width: 200px;
+            padding: 0;
+        }
     }
 
     .class-diagram-img-2__container {
         width: 800px;
         padding: 2rem;
         margin: auto;
+        @include breakpoint(small only) {
+            width: 300px;
+            padding: 0;
+        }
     }
 
     .paypal-img-container {
         width: 600px;
         padding: 2rem;
         margin: auto;
+        @include breakpoint(small only) {
+            width: 300px;
+            padding: 0;
+        }
     }
 }
