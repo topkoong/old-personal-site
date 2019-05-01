@@ -6,13 +6,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remote Build Server</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&amp;subset=cyrillic"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/app.css">
 </head>
 
 <body>
     <header>
-        <nav class="navigation-top">
+        <nav class="navigation-top" id="top">
             <ul class="menu align-center">
                 <li>
                     <a href="/index.html" class="menu__link">Home</a>
@@ -158,13 +159,15 @@
                     <h5 class="u-add-tb-margin"><strong>Run the compile.bat file as admin using the Developer Command
                             Prompt for Visual Studio.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/build-1.JPG" class="image" alt="Build and Run using C# compiler from command line">
+                        <img src="/images/projects/remotebuildserver/application/build-1.JPG" class="image"
+                            alt="Build and Run using C# compiler from command line">
                         <p class="caption">Compile using C# compiler from command line</p>
                     </div>
                     <h5 class="u-add-tb-margin"><strong>It will automatically run the run.bat file as admin using the
                             Developer Command Prompt for Visual Studio.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/run-2.jpg" class="image" alt="Build and Run using C# compiler from command line">
+                        <img src="/images/projects/remotebuildserver/application/run-2.jpg" class="image"
+                            alt="Build and Run using C# compiler from command line">
                         <p class="caption">Run using C# compiler from command line</p>
                     </div>
                     <h5 class="u-add-tb-margin"><strong>Client Mock can select files to upload from local storage to
@@ -175,19 +178,22 @@
                             Processes. Also, it enables building test requests by selecting file names from the Mock
                             Repository.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/UI.jpg" class="image" alt="Package Diagram">
+                        <img src="/images/projects/remotebuildserver/application/UI.jpg" class="image"
+                            alt="Package Diagram">
                         <p class="caption">The user's primary interface (Graphical User Interface (GUI)) into the
                             Federation, serves to submit code and test requests to the Repository using WPF.</p>
                     </div>
-                    <h5 class="u-add-tb-margin"><strong>Specify the number of child builders to be started.</strong></h5>
+                    <h5 class="u-add-tb-margin"><strong>Specify the number of child builders to be started.</strong>
+                    </h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/specify-children-builder.JPG" class="image"
-                            alt="Package Diagram">
+                        <img src="/images/projects/remotebuildserver/application/specify-children-builder.JPG"
+                            class="image" alt="Package Diagram">
                         <p class="caption">A process pool component that creates a specified number of processes on
                             command.</p>
                     </div>
                     <h5 class="u-add-tb-margin"><strong>Mother process has spawned child process builders and uses
-                            Message-Passing Communication Service built with WCF to communicate with Pool Processes.</strong></h5>
+                            Message-Passing Communication Service built with WCF to communicate with Pool
+                            Processes.</strong></h5>
                     <div class="img-container">
                         <img src="/images/projects/remotebuildserver/application/mother-builder-1.JPG" class="image"
                             alt="The mother process">
@@ -199,7 +205,8 @@
                             request to it yet. If a mother builder has sent a build request to it, it will send a build
                             file request to RepoMock so it can ask for files.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/childproc-1.JPG" class="image" alt="The pool processes">
+                        <img src="/images/projects/remotebuildserver/application/childproc-1.JPG" class="image"
+                            alt="The pool processes">
                     </div>
 
                     <h5 class="u-add-tb-margin"><strong>The GUI client is a separate process, implemented with Windows
@@ -210,19 +217,22 @@
                             test libraries to the build request structure, and it is able to request the repository to
                             send a build request in its storage to the Build Server for build processing.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/GUI-console-1.JPG" class="image" alt="The GUI client">
+                        <img src="/images/projects/remotebuildserver/application/GUI-console-1.JPG" class="image"
+                            alt="The GUI client">
                         <p class="caption">The GUI client sends build request structures to the repository for storage
                             and transmission to the Mother Builder (Build Server). – 1</p>
                     </div>
 
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/GUI-console-2.JPG" class="image" alt="The GUI client">
+                        <img src="/images/projects/remotebuildserver/application/GUI-console-2.JPG" class="image"
+                            alt="The GUI client">
                         <p class="caption">The GUI client sends build request structures to the repository for storage
                             and transmission to the Mother Builder (Build Server). – 2</p>
                     </div>
 
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/GUI-console-3.JPG" class="image" alt="The GUI client">
+                        <img src="/images/projects/remotebuildserver/application/GUI-console-3.JPG" class="image"
+                            alt="The GUI client">
                         <p class="caption">The GUI client sends build request structures to the repository for storage
                             and transmission to the Mother Builder (Build Server). – 3</p>
                     </div>
@@ -233,11 +243,13 @@
                             along with their dependency relationships. It also holds test results and may cache build
                             images.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/repomock-1.JPG" class="image" alt="The mock Repository">
+                        <img src="/images/projects/remotebuildserver/application/repomock-1.JPG" class="image"
+                            alt="The mock Repository">
                         <p class="caption">The mock Repository has received build request structures.</p>
                     </div>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/repomock-2.JPG" class="image" alt="The mock Repository">
+                        <img src="/images/projects/remotebuildserver/application/repomock-2.JPG" class="image"
+                            alt="The mock Repository">
                         <p class="caption">The mock Repository has forwarded build request structures to the Mother
                             Builder.</p>
                     </div>
@@ -263,17 +275,21 @@
                             build request to them yet. If so, they will send a build file request to RepoMock so they
                             can ask for files.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/childproc-1.JPG" class="image" alt="The pool processes">
+                        <img src="/images/projects/remotebuildserver/application/childproc-1.JPG" class="image"
+                            alt="The pool processes">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>The mock Repository has sent required build files to Pool
                             Processes.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/repomock-2.JPG" class="image" alt="The mock Repository">
+                        <img src="/images/projects/remotebuildserver/application/repomock-2.JPG" class="image"
+                            alt="The mock Repository">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>RepoMock keeps checking the Mother Process if there's an
-                            incoming build file request message from Pool Processes, running as a background thread.</strong></h5>
+                            incoming build file request message from Pool Processes, running as a background
+                            thread.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/repomock-3.JPG" class="image" alt="The mock Repository">
+                        <img src="/images/projects/remotebuildserver/application/repomock-3.JPG" class="image"
+                            alt="The mock Repository">
                         <p class="caption">After the mock Repository receives build file request messages from child
                             process builders, it will immediately send required build files to each child process
                             builder.</p>
@@ -281,13 +297,15 @@
                     <h5 class="u-add-tb-margin"><strong>Based on build requests and code sent from the Repository, the
                             Pool Processes builds test libraries for submission to the Test Harness.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/childproc-2.JPG" class="image" alt="The pool processes">
+                        <img src="/images/projects/remotebuildserver/application/childproc-2.JPG" class="image"
+                            alt="The pool processes">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>After Pool Processes has successfully built the test libraries,
                             they will send the build log to the Mock Repository. Then, they keep checking another
                             request messages.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/childproc-3.JPG" class="image" alt="The pool processes">
+                        <img src="/images/projects/remotebuildserver/application/childproc-3.JPG" class="image"
+                            alt="The pool processes">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>The Test Harness checks if there's a test request and
                             DllFilesSent message using MessagePassingComm service. If there's a test request message,
@@ -295,46 +313,56 @@
                             xmlDeserialization function. Then, it will ask for required files, matching a test request
                             after deserialization.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/test-harness-1.JPG" class="image" alt="The Test Harness">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-1.JPG" class="image"
+                            alt="The Test Harness">
                     </div>
 
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/childproc-3.JPG" class="image" alt="The pool processes">
+                        <img src="/images/projects/remotebuildserver/application/childproc-3.JPG" class="image"
+                            alt="The pool processes">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>The Test Harness attempts to load each test library it receives
                             and executes it.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/test-harness-2.JPG" class="image" alt="The Test Harness">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-2.JPG" class="image"
+                            alt="The Test Harness">
                     </div>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/test-harness-3.JPG" class="image" alt="The Test Harness">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-3.JPG" class="image"
+                            alt="The Test Harness">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>The Test Harness submits the results of testing to the
                             Repository. – 1</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/test-harness-4.JPG" class="image" alt="The Test Harness">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-4.JPG" class="image"
+                            alt="The Test Harness">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>The Test Harness submits the results of testing to the
                             Repository. – 2</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/test-harness-5.JPG" class="image" alt="The Test Harness">
+                        <img src="/images/projects/remotebuildserver/application/test-harness-5.JPG" class="image"
+                            alt="The Test Harness">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>The Mock Repo has received a build log message from Pool
                             Processes.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/repomock-4.JPG" class="image" alt="The mock Repository">
+                        <img src="/images/projects/remotebuildserver/application/repomock-4.JPG" class="image"
+                            alt="The mock Repository">
                     </div>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/repomock-5.JPG" class="image" alt="The mock Repository">
+                        <img src="/images/projects/remotebuildserver/application/repomock-5.JPG" class="image"
+                            alt="The mock Repository">
                     </div>
                     <h5 class="u-add-tb-margin"><strong>The Mock Repo has obtained test results.</strong></h5>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/application/repomock-6.JPG" class="image" alt="The mock Repository">
+                        <img src="/images/projects/remotebuildserver/application/repomock-6.JPG" class="image"
+                            alt="The mock Repository">
                     </div>
                     <p>For detailed information, it is represented in the form of an activity diagram as illustrated
                         below.</p>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/activity-diagram.jpg" class="image" alt="Package Diagram">
+                        <img src="/images/projects/remotebuildserver/activity-diagram.jpg" class="image"
+                            alt="Package Diagram">
                         <p class="caption">Remote Build Server Activity Diagram</p>
                     </div>
                 </div>
@@ -367,12 +395,14 @@
                     </p>
                     <p>The figure below illustrates package diagram for the Remote Build Server.</p>
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/package-diagram.jpg" class="image" alt="Package Diagram">
+                        <img src="/images/projects/remotebuildserver/package-diagram.jpg" class="image"
+                            alt="Package Diagram">
                         <p class="caption">Remote Build Server Package Diagram</p>
                     </div>
 
                     <div class="img-container">
-                        <img src="/images/projects/remotebuildserver/class-diagram.jpg" class="image" alt="Package Diagram">
+                        <img src="/images/projects/remotebuildserver/class-diagram.jpg" class="image"
+                            alt="Package Diagram">
                         <p class="caption">Remote Build Server Class Diagram</p>
                     </div>
                 </div>
@@ -840,6 +870,11 @@
                     </ul>
                 </div>
 
+            </div>
+            <div class="cell">
+                <div class="btn-container u-add-tb-margin">
+                    <a href="#top" class="alert button" data-smooth-scroll>Go back to the Top</a>
+                </div>
             </div>
         </div>
     </section>

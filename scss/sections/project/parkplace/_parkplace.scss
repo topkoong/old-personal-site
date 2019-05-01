@@ -14,7 +14,7 @@
         padding: 2rem;
         margin: auto;
         @include breakpoint(small only) {
-            width: 300px;
+            width: 250px;
             padding: 0;
         }
     }
@@ -34,7 +34,7 @@
         padding: 2rem;
         margin: auto;
         @include breakpoint(small only) {
-            width: 400px;
+            width: 300px;
             padding: 0;
         }
     }

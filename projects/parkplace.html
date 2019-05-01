@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <nav class="navigation-top">
+        <nav class="navigation-top" id="top">
             <ul class="menu align-center">
                 <li>
                     <a href="/index.html" class="menu__link">Home</a>
@@ -775,15 +775,18 @@
                                                     by providing the necessary credentials or logs in using the site’s
                                                     registration and authentication procedure.</li>
                                                 <li>The authentication service powered by Google’s Firebase enables the
-                                                    owner to register and also to successfully login to his dashboard.</li>
+                                                    owner to register and also to successfully login to his dashboard.
+                                                </li>
                                                 <li>The owner should be allowed to also publish his own space for rent
-                                                    on the page by providing details like photos of the parking space, the
+                                                    on the page by providing details like photos of the parking space,
+                                                    the
                                                     street address, contact information, duration and date for which the
                                                     parking space is being rented. </li>
                                                 <li>Additionally, the owner should also be able to view the upcoming
                                                     schedule of his rented parking spots along with driver details.</li>
                                                 <li>Thus, through the system, the owner is connected to the driver. The
-                                                    owner, while registering also provides his bank details for obtaining
+                                                    owner, while registering also provides his bank details for
+                                                    obtaining
                                                     payment from the financial institution after the booking has been
                                                     authorized.</li>
 
@@ -801,17 +804,20 @@
                                             <ul class="nested-list">
 
                                                 <li>A user can also be a driver looking for parking spaces near his
-                                                    destination. While he is able to do this without registering, in order to
+                                                    destination. While he is able to do this without registering, in
+                                                    order to
                                                     reserve a spot user registration is mandatory. </li>
                                                 <li>Registration and authentication processes are facilitated by
                                                     Google’s Firebase authentication service.</li>
                                                 <li>Once the driver chooses the parking space of his liking, he is
                                                     redirected to the booking and payment page.</li>
                                                 <li>Once there, the driver needs to make a payment through the
-                                                    electronic payment system, which is further verified and validated by the payment
+                                                    electronic payment system, which is further verified and validated
+                                                    by the payment
                                                     gateway service provider. </li>
                                                 <li>This completes the checkout process and the driver reserves his
-                                                    parking spot. If the driver is reserving a spot for the first time, it is
+                                                    parking spot. If the driver is reserving a spot for the first time,
+                                                    it is
                                                     mandatory to register. </li>
                                                 <li>The driver becomes affiliated to the owner after the reservation
                                                     process.</li>
@@ -841,10 +847,12 @@
                                                 <li>If it is an unregistered user, the user (owner or driver) can sign
                                                     up. </li>
                                                 <li>After successful login, the owner is redirected to his/her
-                                                    dashboard. Here the owner can see thumbnails of all parking spaces published. This
+                                                    dashboard. Here the owner can see thumbnails of all parking spaces
+                                                    published. This
                                                     data is fetched from MongoDB.</li>
                                                 <li>The owner has the functionalities of publishing a new spot, editing
-                                                    an already published and not reserved spot, and cancelling or removing an
+                                                    an already published and not reserved spot, and cancelling or
+                                                    removing an
                                                     unreserved
                                                     spot from the list of published parking spots.</li>
                                                 <li>After the owner completes any one of these functionalities, he/she
@@ -867,21 +875,26 @@
                                                 <li>The activity diagram for the driver explains the flow of activities
                                                     for a driver who seeks to reserve a parking spot. </li>
                                                 <li>Initially any unregistered driver can view available parking spots
-                                                    in a certain location using the ‘search for a parking spot’ feature. A web page
-                                                    consisting of a list of all parking spots in and around the sought location
+                                                    in a certain location using the ‘search for a parking spot’ feature.
+                                                    A web page
+                                                    consisting of a list of all parking spots in and around the sought
+                                                    location
                                                     are rendered to the driver.</li>
                                                 <li>If the driver wants to reserve the parking spot, it is mandatory to
                                                     go through the registration or authentication procedure.</li>
                                                 <li>After successful registration or login, the driver is guided into
-                                                    his/her dashboard. Here, based on the parking spot of his liking he can
+                                                    his/her dashboard. Here, based on the parking spot of his liking he
+                                                    can
                                                     initiate the checkout process. </li>
                                                 <li>The driver will first be taken to a reservation page that will
-                                                    present all of the parking spot details, including price, available time slots
+                                                    present all of the parking spot details, including price, available
+                                                    time slots
                                                     and location. </li>
                                                 <li>Once there, the driver can select the space and confirm his/her
                                                     reservation.</li>
                                                 <li>This is immediately followed by the booking stage. The payment made
-                                                    goes through a secure gateway and is validated by the payment gateway
+                                                    goes through a secure gateway and is validated by the payment
+                                                    gateway
                                                     service provider.
                                                 </li>
                                                 <li>On successful reservation, the owner of the spot and driver will
@@ -901,17 +914,23 @@
                                 </div>
                                 <ul class="nested-list">
                                     <li>Financial transactions must go through a secure, encrypted gateway (VPN
-                                        tunnel). The responsibility of handling, and consequently validating payments/bookings must
-                                        hence be handled by a trusted financial institution. A sequence indicating the steps
+                                        tunnel). The responsibility of handling, and consequently validating
+                                        payments/bookings must
+                                        hence be handled by a trusted financial institution. A sequence indicating the
+                                        steps
                                         for successful booking of a parking spot are listed below.</li>
                                     <li>The driver searches for a parking spot at a location of his/her choice. Owing
-                                        to a change in mind, the driver is free to go back and make another search, or opt for
-                                        another parking space from the list of parking spaces displayed around the location of
+                                        to a change in mind, the driver is free to go back and make another search, or
+                                        opt for
+                                        another parking space from the list of parking spaces displayed around the
+                                        location of
                                         choice.</li>
                                     <li>Once the driver has decided to go ahead with a parking spot, he/she reserves
-                                        that spot by entering credit/ debit card details on the booking and payment page. </li>
+                                        that spot by entering credit/ debit card details on the booking and payment
+                                        page. </li>
                                     <li>Once the payment is made, it is routed through the payment gateway, verified by
-                                        the financial institution handling the payment, and then routes it to the owner’s account.
+                                        the financial institution handling the payment, and then routes it to the
+                                        owner’s account.
                                     </li>
                                     <li>A booking id is generated for the driver, and a confirmation email is sent.</li>
                                     <li>Similarly, the owner of the parking spot is notified of the booking through
@@ -937,8 +956,10 @@
                                             <p>Class Diagram for Parking Spot</p>
                                             <ul class="nested-list">
                                                 <li>A schematic representation of a ParkingSpot is shown as a class
-                                                    diagram below. Each parking spot has attributes such as location, an image and
-                                                    owner data. Database queries for parking spots can be made using any of
+                                                    diagram below. Each parking spot has attributes such as location, an
+                                                    image and
+                                                    owner data. Database queries for parking spots can be made using any
+                                                    of
                                                     these attributes.
                                                 </li>
                                             </ul>
@@ -952,8 +973,10 @@
                                             <p>Class Diagram for System User</p>
                                             <ul class="nested-list">
                                                 <li>The system characterizes users to be either owners of parking
-                                                    spots, or drivers who book parking spots from the owners. Hence, we normally have an
-                                                    abstrac class that represents a generic user. The Owner, Driver and Admin
+                                                    spots, or drivers who book parking spots from the owners. Hence, we
+                                                    normally have an
+                                                    abstrac class that represents a generic user. The Owner, Driver and
+                                                    Admin
                                                     classes extend the User abstract class.
                                                 </li>
                                             </ul>
@@ -970,7 +993,8 @@
             <div class="cell">
                 <h4 class="u-add-tb-margin"><strong>System Architecture</strong></h4>
                 <p>As web development matured and interactivity came to the fore, single page applications became more
-                    popular. An SPA is a web application paradigm that avoids refreshing a web page to display new content; it
+                    popular. An SPA is a web application paradigm that avoids refreshing a web page to display new
+                    content; it
                     instead uses lightweight calls to the server to get some data or snippets and updates the web page.
                 </p>
                 <div class="img-container">
@@ -981,6 +1005,11 @@
 
             <div class="cell">
                 <hr>
+            </div>
+            <div class="cell">
+                <div class="btn-container u-add-tb-margin">
+                    <a href="#top" class="alert button" data-smooth-scroll>Go back to the Top</a>
+                </div>
             </div>
     </section>
 
