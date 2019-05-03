@@ -8,3 +8,6 @@ if(portfolio) {
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => card.classList.add('animated', 'swing', 'delay-1s'))
 }
+
+const imgContainers = document.querySelectorAll('.img-container');
+imgContainers.forEach(imgContainer => imgContainer.classList.add('animated', 'bounceInDown', 'delay-1s'));
