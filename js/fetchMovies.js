@@ -1,4 +1,4 @@
-function createMovie(title, year, poster) {
+const createMovie = ({ Title: title, Year: year, Poster: poster }) => {
 	const movieList = document.querySelector('.movie-list');
 	const cell = document.createElement('div');
 	cell.classList.add('cell');
@@ -29,8 +29,7 @@ const fetchMovies = url => {
 		.then(movies => {
 			movies = movies.Search;
 			for (let movie of movies) {
-				const { Title: title, Year: year, Poster: poster } = movie;
-				createMovie(title, year, poster);
+				createMovie(movie);
 			}
 		})
 		.catch(err => {
