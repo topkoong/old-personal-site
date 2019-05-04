@@ -1,5 +1,3 @@
-$(document).foundation();
-
 const headerSecondary = document.querySelector('.header-secondary');
 if(headerSecondary) headerSecondary.classList.add('animated', 'heartBeat', 'delay-1s');
 
