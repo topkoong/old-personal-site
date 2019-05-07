@@ -12,6 +12,7 @@
     
     }
     .header-secondary {
+        font-family: 'Work Sans', sans-serif;
         font-size: 40px;
         font-weight: 500;
         &--highlight {
@@ -62,6 +63,7 @@
 
 
     .exp {
+        font-family: 'Work Sans', sans-serif;
         font-weight: 700;
         font-size: 25px;
     }
@@ -116,7 +118,7 @@
 
         &__title {
             color: #808080;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Work Sans', sans-serif;
             font-weight: 700;
             font-size: 20px;
             margin-left: 1rem;
@@ -127,7 +129,7 @@
         }
 
         &__duration {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Work Sans', sans-serif;
             font-weight: 300;
             color: $dark-gray;
             //margin-left: rem-calc(10);
@@ -137,7 +139,7 @@
         }
 
         &__role {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Work Sans', sans-serif;
             padding: .5rem;
             color: #5c5c5c;
             font-weight: 500;
